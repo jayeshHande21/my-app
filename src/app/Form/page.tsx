@@ -1,14 +1,23 @@
 "use client"
-import React, { useState  } from 'react'
+import React, { useContext, useState  } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Header from "../Header/page"
+import NotificationContext from '@/utils/NotificationContext';
+
 
 const page = () => {
     const [buttonClicked , setButtonClicked] = useState(false);
+    const { showNotification } = useContext(NotificationContext);
+
+    const handleShowNotification = () => {
+      showNotification('This is a notification message!');
+    };
     
     const handleButton = ()=>{
 
         setButtonClicked(!buttonClicked);
+        handleShowNotification()
         
         toast.success('Form Submitted', {
             autoClose: 1000, 
@@ -18,10 +27,9 @@ const page = () => {
      
   return (
     <div>
-
-
+     <Header/>    
     <section className="bg-gray-100">
-  <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+  <div className="mx-auto mt-40 max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
     <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
       <div className="lg:col-span-2 lg:py-12">
         <p className="max-w-xl text-lg">
