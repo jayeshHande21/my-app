@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 
 
-const page = () => {
+const Page = () => {
   const currentEvent = useSelector((state: any) => state.event.currentEvent[0]);
 // console.log(currentEvent)
 // useEffect(()=>{
@@ -67,4 +67,4 @@ if (!currentEvent) {
   )
 }
 
-export default page
+export default Page

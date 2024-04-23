@@ -4,20 +4,27 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from "../Header/page"
 import NotificationContext from '@/utils/NotificationContext';
+import { sendMail } from '@/lib/mail';
 
 
 const page = () => {
-    const [buttonClicked , setButtonClicked] = useState(false);
-    const { showNotification } = useContext(NotificationContext);
+ 
 
-    const handleShowNotification = () => {
-      showNotification('This is a notification message!');
-    };
+    // const handleShowNotification = () => {
+    //   showNotification('This is a notification message!');
+    // };
     
-    const handleButton = ()=>{
+    const handleButton = async ()=>{
+      
+      await sendMail({
+        to: "jayeshhande00@gmail.com",
+        name: "Jayesh",
+        subject: "Test Mail",
+        body: '<h1>You Successfully Register for the Event</h1>'
+      });
 
-        setButtonClicked(!buttonClicked);
-        handleShowNotification()
+        // setButtonClicked(!buttonClicked);
+        // handleShowNotification()
         
         toast.success('Form Submitted', {
             autoClose: 1000, 
