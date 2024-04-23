@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 
 
-const page = () => {
+const Page = () => {
   return (
     <div>
       <section className="bg-gray-50">
@@ -34,4 +34,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

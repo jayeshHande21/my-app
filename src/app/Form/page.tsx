@@ -1,30 +1,25 @@
 "use client"
-import React, { useContext, useState  } from 'react'
+import React from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from "../Header/page"
-import NotificationContext from '@/utils/NotificationContext';
-import { sendMail } from '@/lib/mail';
+// import { sendMail } from '@/lib/mail';
 
 
-const page = () => {
+const Page = () => {
  
 
-    // const handleShowNotification = () => {
-    //   showNotification('This is a notification message!');
-    // };
     
     const handleButton = async ()=>{
       
-      await sendMail({
-        to: "jayeshhande00@gmail.com",
-        name: "Jayesh",
-        subject: "Test Mail",
-        body: '<h1>You Successfully Register for the Event</h1>'
-      });
+      // await sendMail({
+      //   to: "jayeshhande00@gmail.com",
+      //   name: "Jayesh",
+      //   subject: "Test Mail",
+      //   body: '<h1>You Successfully Register for the Event</h1>'
+      // });
 
-        // setButtonClicked(!buttonClicked);
-        // handleShowNotification()
+     
         
         toast.success('Form Submitted', {
             autoClose: 1000, 
@@ -119,4 +114,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

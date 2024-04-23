@@ -7,11 +7,12 @@ import Footer from "../Footer/page"
 import { useDispatch } from 'react-redux'
 import { addCurrentEvent } from '@/utils/eventSlice'
 import Link from 'next/link'
+import Image from 'next/image'
 
 
 
 
-const page = () => {
+const Page = () => {
   const dispatch = useDispatch()
 
   const handleCurrentEvent = (event : any)=>{
@@ -27,11 +28,13 @@ const page = () => {
         eventData.map((event)=>(
           <div key={event.id}>
             <article className="mt-20 overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm lg:w-[540px] ">
-              <img
-                alt=""
-                src={event.eventThumbnail}
-                className=" ht-[12rem] w-[520px] object-cover"
-               />
+            <Image
+  alt=""
+  src={event.eventThumbnail}
+  className="ht-[12rem] w-[520px] object-cover"
+  width={520}
+  height={200} 
+/>
 
                 <div className="p-4 sm:p-6 lg:w-[540px]">
                   <a href="#">
@@ -72,4 +75,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

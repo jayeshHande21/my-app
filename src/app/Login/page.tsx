@@ -1,8 +1,9 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 
-const page = () => {
+const Page = () => {
   return (
     <div>
 
@@ -13,7 +14,7 @@ const page = () => {
       <h1 className="text-2xl font-bold sm:text-3xl">Lets Book Your Event <span className='text-red-700'>Today!</span></h1>
 
       <p className="mt-4 text-gray-500">
-      Welcome to our event booking page, where you can explore a diverse range of enriching experiences. Book your spot now and embark on a journey of learning, networking, and discovery with us!
+      Welcome to our event booking Page, where you can explore a diverse range of enriching experiences. Book your spot now and embark on a journey of learning, networking, and discovery with us!
       </p>
     </div>
 
@@ -99,15 +100,17 @@ const page = () => {
   </div>
 
   <div className="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
-    <img
-      alt=""
-      src="https://images.unsplash.com/photo-1630450202872-e0829c9d6172?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-      className="absolute inset-0 h-full w-full object-cover"
-    />
+  <Image
+  alt=""
+  src="https://images.unsplash.com/photo-1630450202872-e0829c9d6172?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+  className="absolute inset-0 h-full w-full object-cover"
+  layout="fill"
+/>
+
   </div>
 </section>
     </div>
   )
 }
 
-export default page
+export default Page

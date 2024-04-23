@@ -3,6 +3,7 @@ import React from 'react'
 import Header from "../Header/page"
 import { useSelector } from 'react-redux'
 import Link from 'next/link'
+import Image from 'next/image'
 
 
 
@@ -55,11 +56,13 @@ if (!currentEvent) {
         </div>
 
         <div className="relative mt-16 h-84 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-300">
-          <img
-            alt=""
-            src={currentEvent.eventThumbnail}
-            className="absolute inset-0 h-full w-full object-cover"
-          />
+        <Image
+              alt=""
+              src={currentEvent.eventThumbnail}
+              className="absolute inset-0 h-full w-full object-cover"
+              width={550}
+              height={550}
+            />
         </div>
       </div>
     </section>
