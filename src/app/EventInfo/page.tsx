@@ -11,13 +11,11 @@ import Image from 'next/image'
 
 const Page = () => {
   const currentEvent = useSelector((state: any) => state.event.currentEvent[0]);
-// console.log(currentEvent)
-// useEffect(()=>{
- 
-//   console.log(currentEvent)
-// },[])
+
+
+
 if (!currentEvent) {
-  // Handle case where currentEvent is undefined or null
+
   return (
     <div>
       <Header />

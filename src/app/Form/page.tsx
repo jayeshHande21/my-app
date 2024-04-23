@@ -3,27 +3,34 @@ import React from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from "../Header/page"
-// import { sendMail } from '@/lib/mail';
+import emailjs from '@emailjs/browser';
 
 
 const Page = () => {
- 
-
-    
-    const handleButton = async ()=>{
-      
-      // await sendMail({
-      //   to: "jayeshhande00@gmail.com",
-      //   name: "Jayesh",
-      //   subject: "Test Mail",
-      //   body: '<h1>You Successfully Register for the Event</h1>'
-      // });
-
-     
-        
+   
+    const handleButton = async ()=>{   
+  
         toast.success('Form Submitted', {
             autoClose: 1000, 
           });
+
+          const templateParams = {
+            from_name: "Meetup EventBooking",
+            to_name: "Jayesh Hande",
+            message: "You have successfully registered for the event. We look forward to seeing you there!"
+          }
+      
+      
+          emailjs.send("service_ljfhyrv","template_2e7oa4d",templateParams ,'AMk9uym0UJz1cOTll'
+        )
+            .then(
+              () => {
+                console.log('SUCCESS!');
+              },
+              (error) => {
+                console.log('FAILED...', error.text);
+              },
+            );
           
     }   
      
